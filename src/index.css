@@ -1,0 +1,168 @@
+/* Базовые переменные для светлой темы */
+body {
+  --bg-page: #f7f9fa;
+  --bg-card: #ffffff;
+  --text-main: #333333;
+  --text-muted: #777777;
+  --border-color: #eeeeee;
+  
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Переменные для тёмной темы */
+body.dark {
+  --bg-page: #121212;
+  --bg-card: #1e1e1e;
+  --text-main: #e0e0e0;
+  --text-muted: #999999;
+  --border-color: #333333;
+}
+
+.app-container {
+  background: var(--bg-card);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 480px;
+  transition: background-color 0.3s ease;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0;
+  color: var(--text-main);
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-page);
+  color: var(--text-main);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+li span {
+  flex: 1;
+  font-size: 15px;
+}
+
+li.done span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+li button {
+  padding: 4px 8px;
+  background: #ff4d4f;
+}
+
+li button:hover {
+  background: #d9363e;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-buttons button {
+  flex: 1;
+  background: var(--bg-page);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  font-weight: normal;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.filter-buttons button.active {
+  background: #007bff;
+  color: white;
+  border-color: #007bff;
+  font-weight: bold;
+}
+
+.stats-row {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+  padding-left: 4px;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.controls button {
+  flex: 1;
+  background: #6c757d;
+}
+
+.controls .btn-danger {
+  background: #dc3545;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
