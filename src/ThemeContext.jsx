@@ -1,13 +1,17 @@
-import { createContext, useContext, useState, useMemo } from 'react';
+import { createContext, useContext, useMemo } from 'react';
+import { useLocalStorage } from './hooks/useLocalStorage.js';
 
 const ThemeContext = createContext(null);
 
 export function ThemeProvider({ children }) {
-  const [theme, setTheme] = useState('light');
   
-  // Оптимизируем объект контекста с помощью useMemo
+  const [theme, setTheme] = useLocalStorage('theme', 'light');
+  
+
   const value = useMemo(() => ({ theme, setTheme }), [theme]);
 
+  // Для React 19 используется <ThemeContext value={value}>. 
+  // Если у вас React 18 или ниже, замените на <ThemeContext.Provider value={value}>
   return (
     <ThemeContext value={value}>
       {children}
